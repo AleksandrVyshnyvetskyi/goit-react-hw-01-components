@@ -1,35 +1,28 @@
 // ==============================================================================================
 import PropTypes from 'prop-types';
+// ==============================================================================================
 
-export function Statistic({label, percentage}) {
-        return(
+export function Statistic({stats, title}) {
+    return (
         <section className="statistics">
-            <h2 className="title">Upload stats</h2>
+            <h2 className="title">{title}</h2>
             <ul className="stat-list">
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}%</span>
-                </li>
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}%</span>
-                </li>
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}%</span>
-                </li>
-                <li className="item">
-                    <span className="label">{label}</span>
-                    <span className="percentage">{percentage}%</span>
-                </li>
+                {stats.map( stats => (
+                    <li className="item" key= {stats.id}>
+                        <span className="label">{stats.label}</span>
+                        <span className="percentage">{stats.percentage}%</span>
+                    </li>
+                ))}
             </ul>
-            </section>
-        )
+        </section>
+    )
 }
+
+// ==============================================================================================
 
 Statistic.propTypes = {
-    label: PropTypes.string,
-    percentage: PropTypes.number,
+    title: PropTypes.string.isRequired,
+    stats: PropTypes.array.isRequired,
 }
 
-    // ==============================================================================================
+// ==============================================================================================

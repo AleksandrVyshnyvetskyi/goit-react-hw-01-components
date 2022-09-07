@@ -1,5 +1,6 @@
 // ==============================================================================================
 import PropTypes from 'prop-types';
+// ==============================================================================================
 
 export function Profile({username, tag, location, avatar, stats}) {
         return(
@@ -8,7 +9,8 @@ export function Profile({username, tag, location, avatar, stats}) {
                 <img
                 src={avatar}
                 alt={username}
-                className ="avatar"
+                className="avatar"
+                width='200'
                 />
                 <p className ="name">{username}</p>
                 <p className ="tag">@{tag}</p>
@@ -32,13 +34,15 @@ export function Profile({username, tag, location, avatar, stats}) {
         </div>
         )
 }
-    
+
+// ==============================================================================================
+
 Profile.propTypes = {
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    avatar: PropTypes.string,
-    stats: PropTypes.object,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.object.isRequired,
 }
 
-    // ==============================================================================================
+// ==============================================================================================
