@@ -15,11 +15,12 @@ export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
+        height: '100%',
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
         fontSize: 32,
+        backgroundColor: "#6e6e6c",
         color: '#010101',
       }}
     >
