@@ -1,5 +1,5 @@
 // ==============================================================================================
-import PropTypes, { nominalTypeHack } from 'prop-types';
+import PropTypes from 'prop-types';
 // ==============================================================================================
 
 const profileBoxStyle = {
@@ -7,7 +7,6 @@ const profileBoxStyle = {
     backgroundColor: "#FFD662",
     color: "#01539D",
     borderRadius: 10,
-    margin: 30,
 }
 
 const descriptionStyle = {
@@ -83,6 +82,7 @@ const statsLabelStyle = {
     marginBottom: 5,
 }
 
+// ==============================================================================================
 
 export function Profile({username, tag, location, avatar, stats}) {
         return(

@@ -2,40 +2,51 @@
 import { Profile } from './profile/profile';
 import user from './profile/user.json';
 // ==============================================================================================
-import css from './profile/profile.module.css';
 import {Statistic} from './statistics/statistics';
 import data from './statistics/data.json';
 // ==============================================================================================
-import { FriendsList } from './friends/friends';
+import { FriendList } from './friends/friends';
 import friends from './friends/friends.json';
 // ==============================================================================================
 
-
+const titleStyle = {
+    color: 'white',
+    marginBottom:20,
+    fontSize: 32,
+    marginTop: 40,
+}
 export const App = () => {
   return (
     <div
       style={{
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-        fontSize: 32,
-        backgroundColor: "#6e6e6c",
-        color: '#010101',
+          backgroundColor: '#425a7d',
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+          textAlign: 'center',
       }}
     >
+      <div >
+        <h2 style={titleStyle}>Profile</h2>
+        <Profile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
+      </div>
 
-      <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
+      <div>
+        <h2 style={titleStyle}>Statistic</h2>
+        <Statistic title="Upload stats" stats={data} />
+      </div>
 
-      <Statistic title="Upload stats" stats={data} />
+      <div>
+        <h2 style={titleStyle}>Frinds</h2>
+        <FriendList friends={friends} />
+      </div>
 
-      <FriendsList friends={friends} />
 
     </div>
   );
