@@ -8,6 +8,9 @@ import data from './statistics/data.json';
 import { FriendList } from './friends/friends';
 import friends from './friends/friends.json';
 // ==============================================================================================
+import transactions from './transaction/transactions.json'
+import {TransactionHistory} from "./transaction/transactionHistory"
+// ==============================================================================================
 
 const titleStyle = {
     color: 'white',
@@ -15,6 +18,9 @@ const titleStyle = {
     fontSize: 32,
     marginTop: 40,
 }
+
+// ==============================================================================================
+
 export const App = () => {
   return (
     <div
@@ -47,6 +53,10 @@ export const App = () => {
         <FriendList friends={friends} />
       </div>
 
+      <div>
+        <h2 style={titleStyle}>Transaction Hictory</h2>
+        < TransactionHistory transactions={transactions} />
+      </div>
 
     </div>
   );
