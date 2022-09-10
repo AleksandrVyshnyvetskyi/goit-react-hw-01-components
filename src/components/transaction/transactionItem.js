@@ -1,21 +1,16 @@
-// ==============================================================================================
 import PropTypes from 'prop-types';
-// ==============================================================================================
-
-const tdStyle = {
-    width: 100,
-    fontWeight: 500,
-}
+import { TD } from './trainsaction.styled';
 
 export function TransactionItem({ transaction }) {
-    return <tr>
-        <td style={tdStyle}>{transaction.type}</td>
-        <td style={tdStyle}>{transaction.amount}</td>
-        <td style={tdStyle}>{transaction.currency}</td>
-    </tr>;
-
-};// ==============================================================================================
+  return (
+    <tr>
+      <TD>{transaction.type}</TD>
+      <TD>{transaction.amount}</TD>
+      <TD>{transaction.currency}</TD>
+    </tr>
+  );
+}
 
 TransactionItem.propTypes = {
-    transaction: PropTypes.object.isRequired,
-}
+  transaction: PropTypes.object.isRequired,
+};

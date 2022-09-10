@@ -1,45 +1,26 @@
-// ==============================================================================================
 import PropTypes from 'prop-types';
-import { TransactionItem } from "./transactionItem"
-// ==============================================================================================
+import { TransactionItem } from './transactionItem';
+import { Table, TH } from './trainsaction.styled';
 
-const tableStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: 300,
-    backgroundColor: '#a0c0d6',
-    color: '#2a3240',
-    marginBottom: 60,
-    fontSize: 18,
+export function TransactionHistory({ transactions }) {
+  return (
+    <Table className="transaction-history">
+      <thead>
+        <tr>
+          <TH>Type</TH>
+          <TH>Amount</TH>
+          <TH>Currency</TH>
+        </tr>
+      </thead>
+      <tbody>
+        {transactions.map(transaction => (
+          <TransactionItem key={transaction.id} transaction={transaction} />
+        ))}
+      </tbody>
+    </Table>
+  );
 }
-
-const tdStyl = {
-    width: 100,
-    fontWeight: 900,
-
-}
-
-// ==============================================================================================
-
-export function TransactionHistory({ transactions }){
-    return <table className="transaction-history" style={tableStyle}>
-        <thead>
-            <tr>
-                <th style={tdStyl}>Type</th>
-                <th style={tdStyl}>Amount</th>
-                <th style={tdStyl}>Currency</th>
-            </tr>
-        </thead>
-        <tbody>   
-            {transactions.map(transaction =>
-                <TransactionItem key={transaction.id} transaction={transaction} />)}
-        </tbody>
-    </table>;
-};
-
-// ==============================================================================================
 
 TransactionHistory.propTypes = {
-    transactions: PropTypes.array.isRequired,
-}
+  transactions: PropTypes.array.isRequired,
+};
